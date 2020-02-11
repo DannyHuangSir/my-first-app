@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-
+  // Creating Components with the CLI & Nesting Component
+  // 指令 ng generate component [name]
+  // 或者 ng g c [name]
+  // The CLI should update the declaration of app.module.ts automatically
   constructor() { }
 
   ngOnInit(): void {
