@@ -16,6 +16,8 @@ export class ServersComponent implements OnInit {
   // The CLI should update the declaration of app.module.ts automatically
 
   allowNewServer = false;
+  serverCreationStatus = 'No server was Created';
+  serverName = '';
   constructor() {
     const b = [1, 2, 3];
     setTimeout(() => {
@@ -24,6 +26,16 @@ export class ServersComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onCreateServer() {
+    this.serverCreationStatus = "Server was create";
+  }
+
+  onUpdateServerName(event: Event) {
+    console.log(event);
+    // this.serverName = event.target.value;
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
 
 }
