@@ -18,6 +18,8 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was Created';
   serverName = '';
+  isShow = false;
+  log = [];
   constructor() {
     const b = [1, 2, 3];
     setTimeout(() => {
@@ -36,6 +38,19 @@ export class ServersComponent implements OnInit {
     console.log(event);
     // this.serverName = event.target.value;
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  display() {
+    this.isShow = !this.isShow;
+    this.log.push(this.isShow);
+  }
+
+  getColor(index) {
+    return index % 2 === 0 ? 'blue' : 'tranparent';
+  }
+
+  getClass(index) {
+    return index % 2 === 0 ? 'text-white' : 'text-black';
   }
 
 }
